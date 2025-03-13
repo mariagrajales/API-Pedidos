@@ -29,8 +29,8 @@ func Migrate(db *sql.DB) error {
 
 	sqlFiles := []string{
 		"src/database/migrations/sql/000_create_clients_table.sql",
-		"src/database/migrations/sql/001_create_orders_table.sql",
-		"src/database/migrations/sql/002_create_products_tlable.sql",
+		"src/database/migrations/sql/001_create_products_tlable.sql",
+		"src/database/migrations/sql/002_create_orders_table.sql",
 		"src/database/migrations/sql/003_create_order_item_table.sql",
 		"src/database/migrations/sql/004_create_notification_table.sql",
 	}

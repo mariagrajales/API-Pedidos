@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS orders  (
     total_price DECIMAL(10,2) NOT NULL,
     status ENUM('pending', 'processing', 'completed', 'cancelled') NOT NULL,
     quantity INT NOT NULL,
+    product_id BIGINT(20) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
