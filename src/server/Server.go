@@ -6,7 +6,7 @@ import (
 	order "api-order/src/order/infraestructure/http/routes"
 	product "api-order/src/product/infraestructure/http/routes"
 	"log"
-
+	"api-order/src/config" 
 	"github.com/gin-gonic/gin"
 )
 
@@ -30,6 +30,8 @@ func NewServer(http, port string) Server {
 	database.Connect()
 	srv.engine.RedirectTrailingSlash = true
 	srv.registerRoutes()
+
+	srv.engine.Use(config.ConfigurationCors())
 
 	return srv
 }
