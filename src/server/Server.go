@@ -27,11 +27,12 @@ func NewServer(http, port string) Server {
 		httpAddr: http + ":" + port,
 	}
 
+	srv.engine.Use(config.ConfigurationCors())
 	database.Connect()
 	srv.engine.RedirectTrailingSlash = true
 	srv.registerRoutes()
 
-	srv.engine.Use(config.ConfigurationCors())
+	
 
 	return srv
 }
